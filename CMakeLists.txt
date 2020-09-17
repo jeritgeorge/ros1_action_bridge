@@ -31,7 +31,6 @@ find_package(PkgConfig REQUIRED)
 find_ros1_package(roscpp REQUIRED)
 find_ros1_package(actionlib REQUIRED)
 
-find_ros1_package(actionlib_tutorials REQUIRED)
 find_ros1_package(control_msgs REQUIRED)
 
 
