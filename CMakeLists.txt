@@ -21,7 +21,6 @@ find_package(rclcpp REQUIRED)
 find_package(rclcpp_action REQUIRED)
 
 #find_package(example_interfaces REQUIRED)
-find_package(action_tutorials REQUIRED)
 find_package(control_msgs REQUIRED)
 
 # find ROS 1 packages
