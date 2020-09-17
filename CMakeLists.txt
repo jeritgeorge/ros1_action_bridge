@@ -48,25 +48,6 @@ ament_target_dependencies(action_bridge_follow_joint_trajectory_node
     "rclcpp" "rclcpp_action" "control_msgs"
 )
 
-add_executable(action_bridge_fibonacci_node
-    "src/action_bridge_fibonacci.cpp"
-)
-ament_target_dependencies(action_bridge_fibonacci_node
-    "ros1_roscpp" "ros1_actionlib" "ros1_actionlib_tutorials"
-    "rclcpp" "rclcpp_action" "action_tutorials"
-    #"example_interfaces"
-)
-
-
-add_executable(reverse_action_bridge_fibonacci_node
-    "src/reverse_action_bridge_fibonacci.cpp"
-)
-ament_target_dependencies(reverse_action_bridge_fibonacci_node
-    "ros1_roscpp" "ros1_actionlib" "ros1_actionlib_tutorials"
-    "rclcpp" "rclcpp_action" "action_tutorials"
-    #"example_interfaces"
-)
-
 add_executable(reverse_action_bridge_follow_joint_trajectory_node
     "src/reverse_action_bridge_follow_joint_trajectory.cpp"
 )
@@ -79,9 +60,7 @@ ament_target_dependencies(reverse_action_bridge_follow_joint_trajectory_node
 
 install(TARGETS
     action_bridge_follow_joint_trajectory_node
-    action_bridge_fibonacci_node
     reverse_action_bridge_follow_joint_trajectory_node
-    reverse_action_bridge_fibonacci_node
     DESTINATION lib/${PROJECT_NAME}
 )
 
