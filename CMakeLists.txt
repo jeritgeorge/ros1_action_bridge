@@ -22,6 +22,7 @@ find_package(rclcpp_action REQUIRED)
 
 #find_package(example_interfaces REQUIRED)
 find_package(control_msgs REQUIRED)
+find_package(iiwa_msgs REQUIRED)
 
 # find ROS 1 packages
 include(cmake/find_ros1_package.cmake)
@@ -32,6 +33,7 @@ find_ros1_package(roscpp REQUIRED)
 find_ros1_package(actionlib REQUIRED)
 
 find_ros1_package(control_msgs REQUIRED)
+find_ros1_package(iiwa_msgs REQUIRED)
 
 
 ament_export_include_directories(include)
@@ -54,11 +56,20 @@ ament_target_dependencies(reverse_action_bridge_follow_joint_trajectory_node
     "rclcpp" "rclcpp_action" "control_msgs"
 )
 
+add_executable(reverse_action_bridge_move_along_joint_spline_node
+    "src/reverse_action_bridge_move_along_joint_spline.cpp"
+)
+ament_target_dependencies(reverse_action_bridge_move_along_joint_spline_node
+    "ros1_roscpp" "ros1_actionlib" "ros1_control_msgs" "ros1_iiwa_msgs"
+    "rclcpp" "rclcpp_action" "control_msgs" "iiwa_msgs"
+)
+
 
 
 install(TARGETS
     action_bridge_follow_joint_trajectory_node
     reverse_action_bridge_follow_joint_trajectory_node
+    reverse_action_bridge_move_along_joint_spline_node
     DESTINATION lib/${PROJECT_NAME}
 )
 
