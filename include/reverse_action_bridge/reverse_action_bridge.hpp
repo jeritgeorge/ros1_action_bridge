@@ -81,6 +81,10 @@ public:
     {
       std::cout << "ROS1 action server not started yet" << std::endl;
     }
+    else
+    {
+      std::cout << "Found ROS1 action server" << std::endl;
+    }
   }
 
   rclcpp_action::GoalResponse handle_goal(

@@ -60,6 +60,10 @@ public:
     {
       std::cout << "ROS2 action server not started yet" << std::endl;
     }
+    else
+    {
+      std::cout << "Found ROS2 action server" << std::endl;
+    }
   }
 
   void cancel_cb(ROS1GoalHandle gh1)
